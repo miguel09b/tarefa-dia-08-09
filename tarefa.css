@@ -1,0 +1,201 @@
+/* Importação de fonte do Google Fonts (opcional, para um visual mais moderno) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+/* Variáveis CSS para cores (facilita a mudança de tema) */
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #6f42c1; /* Roxo suave */
+    --cor-destaque: #28a745; /* Verde para sucesso */
+    --cor-fundo-claro: #f8f9fa; /* Fundo cinza bem claro */
+    --cor-fundo-escuro: #343a40; /* Fundo cinza escuro */
+    --cor-texto-claro: #f8f9fa;
+    --cor-texto-escuro: #343a40;
+    --fonte-cabecalho: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Open Sans', sans-serif;
+}
+
+/* Estilos gerais */
+body {
+    font-family: var(--fonte-corpo);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden; /* Garante que elementos flutuantes não saiam do container */
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+header {
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--fonte-cabecalho);
+    font-size: 3.5em; /* Aumenta o tamanho da fonte */
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero {
+    background: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    font-family: var(--fonte-cabecalho);
+}
+
+.secao-branca {
+    background: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+.secao-escura {
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+}
+
+.secao-escura h2 {
+    color: var(--cor-primaria);
+}
+
+.secao-escura ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.secao-escura li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.secao-escura li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Imagens de conteúdo */
+.imagem-conteudo {
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards (Pilares) */
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    justify-content: center;
+    gap: 20px; /* Espaço entre os cards */
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px); /* 3 cards por linha no desktop */
+    min-width: 280px; /* Largura mínima para o card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de levantar */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 15px;
+    font-family: var(--fonte-cabecalho);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+
+/* Rodapé */
+footer {
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .card {
+        width: calc(50% - 30px); /* 2 cards por linha em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .card {
+        width: 100%; /* 1 card por linha em celulares */
+    }
+}
